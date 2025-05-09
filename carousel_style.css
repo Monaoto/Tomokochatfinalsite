@@ -1,0 +1,56 @@
+
+/* Carousel container - mobile friendly */
+.carousel-container {
+  width: 100%;
+  overflow-x: auto;
+  margin: 60px 0;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+}
+
+/* Carousel content */
+.carousel {
+  display: flex;
+  gap: 20px;
+  padding: 10px;
+  animation: scrollCarousel 30s linear infinite;
+  width: max-content;
+}
+
+/* Stop animation on desktop hover */
+@media (hover: hover) {
+  .carousel-container:hover .carousel {
+    animation-play-state: paused;
+  }
+}
+
+/* Items inside carousel */
+.carousel-item {
+  flex: 0 0 auto;
+  width: 300px;
+  height: 200px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.carousel-item img,
+.carousel-item video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Responsive for small screens */
+@media (max-width: 768px) {
+  .carousel-item {
+    width: 240px;
+    height: 160px;
+  }
+}
+
+@keyframes scrollCarousel {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+

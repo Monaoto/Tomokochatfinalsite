@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Tomoko Site</title>
+  <link rel="stylesheet" href="carousel_style.css">
+  <style>
+    body {
+      margin: 0;
+      background: black;
+      color: white;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    .section {
+      padding: 30px;
+      text-align: center;
+    }
+    input, button {
+      padding: 10px;
+      margin-top: 10px;
+      font-size: 10px;
+    }
+    #muteButton {
+      margin-top: 20px;
+      background: none;
+      border: 1px solid white;
+      color: white;
+      cursor: pointer;
+    }
+    .spotify-embed {
+      margin-top: 30px;
+      display: none;
+      justify-content: center;
+    }
+
+    /* Carousel */
+    .carousel-container {
+      width: 100%;
+      overflow: hidden;
+      margin: 60px 0;
+    }
+    .carousel {
+      display: flex;
+      gap: 20px;
+      padding: 10px;
+      animation: scrollCarousel 40s linear infinite;
+    }
+    .carousel-item {
+      flex: 0 0 auto;
+      width: 300px;
+      height: 200px;
+      overflow: hidden;
+      cursor: pointer;
+    }
+    .carousel-item img,
+    .carousel-item video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+    @keyframes scrollCarousel {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-100%); }
+    }
+
+    #lightbox {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.95);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+#lightbox-content {
+  max-width: 100%;
+  max-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#lightbox-content img,
+#lightbox-content video {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+  margin: auto;
+}
+    
+    
+  </style>
+</head>
+<body>
+
+  <div class="section">
+    <h2>ともこちゃんサーボ servor #001</h2>
+    <p>enter the password</p>
+    <input type="text" id="codeInput" placeholder="mdp" />
+    <button onclick="checkCode()">⸸</button>
+
+    <div id="musicControls">
+      <button id="muteButton" onclick="toggleSpotify()">🔇mute</button>
+    </div>
+
+    <div class="spotify-embed" id="spotifyEmbed">
+      <iframe style="border-radius:12px" 
+              src="https://open.spotify.com/embed/playlist/0dnH8M89HWCPifGuXG9zdp?utm_source=generator&theme=0"
+              width="80%" height="352" frameBorder="0" allowfullscreen=""
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+      </iframe>
+    </div>
+  </div>
+
+
+
+  <!-- Galerie en carousel -->
+  <div class="carousel-container">
+    <div class="carousel" id="carousel">
+      <!-- Image -->
+      <div class="carousel-item">
+        <img src="hbk.png" alt="Image" onclick="openLightbox(this.src)">
+      </div>
+      <!-- Vidéo -->
+      <div class="carousel-item">
+        <video autoplay muted loop playsinline onclick="openLightbox(this.querySelector('source').src)">
+          <source src="video1.mp4" type="video/mp4">
+        </video>
+      </div>
+      <!-- Duplique les blocs carousel-item ici -->
+
+ <div class="carousel-item">
+        <img src="hbk.png" alt="Image" onclick="openLightbox(this.src)">
+      </div>
+
+       <div class="carousel-item">
+        <img src="hbk.png" alt="Image" onclick="openLightbox(this.src)">
+      </div>
+
+       <div class="carousel-item">
+        <img src="imvu1.png" alt="Image" onclick="openLightbox(this.src)">
+      </div>
+<!--Videos 2 -->
+       <div class="carousel-item">
+        <video autoplay muted loop playsinline onclick="openLightbox(this.querySelector('source').src)">
+          <source src="video2.mp4" type="video/mp4">
+        </video>
+      </div>
+<!-- Image -->
+ <div class="carousel-item">
+        <img src="imvu2.jpg" alt="Image" onclick="openLightbox(this.src)">
+      </div>
+
+       <div class="carousel-item">
+        <img src="imvu3.jpg" alt="Image" onclick="openLightbox(this.src)">
+      </div>
+
+       <div class="carousel-item">
+        <img src="imvu4.jpg" alt="Image" onclick="openLightbox(this.src)">
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 5 carousels en sens alterné -->
+
+<div class="carousel-container">
+  <div class="carousel" style="animation-direction: reverse;">
+    <div class="carousel-item">
+      <img src="https://via.placeholder.com/300x200?text=1" onclick="openLightbox(this.src)">
+    </div>
+    <div class="carousel-item">
+      <video autoplay muted loop playsinline onclick="openLightbox(this.querySelector('source').src)">
+        <source src="video2.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+</div>
+
+<div class="carousel-container">
+  <div class="carousel" style="animation-direction: normal;">
+    <div class="carousel-item">
+      <img src="hbk.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="carousel-item">
+      <img src="clem1.png" onclick="openLightbox(this.src)">
+    </div>
+  </div>
+</div>
+
+<div class="carousel-container">
+  <div class="carousel" style="animation-direction: reverse;">
+    <div class="carousel-item">
+      <video autoplay muted loop playsinline onclick="openLightbox(this.querySelector('source').src)">
+        <source src="video1.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="carousel-item">
+      <img src="imvu1.png" onclick="openLightbox(this.src)">
+    </div>
+  </div>
+</div>
+
+<div class="carousel-container">
+  <div class="carousel" style="animation-direction: normal;">
+    <div class="carousel-item">
+      <img src="imvu2.jpg" onclick="openLightbox(this.src)">
+    </div>
+    <div class="carousel-item">
+      <img src="imvu3.jpg" onclick="openLightbox(this.src)">
+    </div>
+  </div>
+</div>
+
+<div class="carousel-container">
+  <div class="carousel" style="animation-direction: reverse;">
+    <div class="carousel-item">
+      <video autoplay muted loop playsinline onclick="openLightbox(this.querySelector('source').src)">
+        <source src="video2.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="carousel-item">
+      <img src="imvu4.jpg" onclick="openLightbox(this.src)">
+    </div>
+  </div>
+</div>
+
+
+  <!-- Lightbox plein écran -->
+  <div id="lightbox" onclick="closeLightbox()">
+    <div id="lightbox-content"></div>
+  </div>
+
+  <script>
+    function checkCode() {
+      const input = document.getElementById("codeInput").value;
+      if (input === "moko2025") {
+        loadChat();
+      } else {
+        alert("oups :( raté)");
+      }
+    }
+
+    function loadChat() {
+      if (!window.VG_CONFIG) {
+        window.VG_CONFIG = {
+          ID: "TD5jYn21B2qkP32fecHO",
+          region: 'na',
+          render: 'popup',
+          stylesheets: [
+            "https://vg-bunny-cdn.b-cdn.net/vg_live_build/styles.css"
+          ],
+          autostart: true
+        };
+        const s = document.createElement("script");
+        s.src = "https://vg-bunny-cdn.b-cdn.net/vg_live_build/vg_bundle.js";
+        document.body.appendChild(s);
+      }
+    }
+
+    function toggleSpotify() {
+      const embed = document.getElementById("spotifyEmbed");
+      const btn = document.getElementById("muteButton");
+      const isVisible = embed.style.display === "flex";
+      embed.style.display = isVisible ? "none" : "flex";
+      btn.textContent = isVisible ? "🔇" : "🔊 ";
+    }
+
+    function openLightbox(src) {
+      const content = document.getElementById('lightbox-content');
+      content.innerHTML = '';
+
+      if (src.endsWith('.mp4')) {
+        const video = document.createElement('video');
+        video.src = src;
+        video.controls = true;
+        video.autoplay = true;
+        content.appendChild(video);
+      } else {
+        const img = document.createElement('img');
+        img.src = src;
+        content.appendChild(img);
+      }
+
+      document.getElementById('lightbox').style.display = 'flex';
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').style.display = 'none';
+    }
+
+    
+  </script>
+
+</body>
+</html>
