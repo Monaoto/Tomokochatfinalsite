@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Tomoko Site</title>
+  <style>
+    body {
+      margin: 0;
+      background: black;
+      color: white;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    .section {
+      padding: 30px;
+      text-align: center;
+    }
+    #VG_OVERLAY_CONTAINER {
+      width: 500px;
+      height: 500px;
+      display: none;
+      position: fixed;
+      top: 60%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1000;
+      background: black;
+    }
+    input, button {
+      padding: 10px;
+      margin-top: 10px;
+      font-size: 10px;
+    }
+    #muteButton {
+      margin-top: 20px;
+      background: none;
+      border: 1px solid white;
+      color: white;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body onload="autoPlayMusic()">
+
+  <div class="section">
+    <h2>ともこちゃんサーボ servor #001</h2>
+    <p>enter the password</p>
+    <input type="text" id="codeInput" placeholder="mdp" />
+    <button onclick="checkCode()">⸸</button>
+
+    <div id="musicControls">
+      <button id="muteButton" onclick="toggleMute()">🔇 Son coupé</button>
+    </div>
+  </div>
+
+  <div id="VG_OVERLAY_CONTAINER"></div>
+
+  <!-- Audio player -->
+  <audio id="bgMusic" loop muted>
+    <source src="nettspend.mp3" type="audio">
+    Ton navigateur ne supporte pas l'audio HTML5.
+  </audio>
+
+  <script>
+    function autoPlayMusic() {
+      const music = document.getElementById("bgMusic");
+      music.volume = 0.5;
+      music.play().catch(() => {
+        // Certains navigateurs bloquent l’autoplay, même muted
+        console.log("Autoplay bloqué. L’utilisateur doit interagir.");
+      });
+    }
+
+    function checkCode() {
+      const input = document.getElementById("codeInput").value;
+      if (input === "moko2025") {
+        loadChat();
+      } else {
+        alert("oups :( raté)");
+      }
+    }
+
+    function loadChat() {
+      document.getElementById("VG_OVERLAY_CONTAINER").style.display = "block";
+      window.VG_CONFIG = {
+        ID: "TD5jYn21B2qkP32fecHO",
+        region: 'na',
+        render: 'full-width',
+        stylesheets: [
+          "https://vg-bunny-cdn.b-cdn.net/vg_live_build/styles.css"
+        ],
+        autostart: true
+      };
+      const s = document.createElement("script");
+      s.src = "https://vg-bunny-cdn.b-cdn.net/vg_live_build/vg_bundle.js";
+      document.body.appendChild(s);
+    }
+
+    function toggleMute() {
+      const music = document.getElementById("bgMusic");
+      const btn = document.getElementById("muteButton");
+      music.muted = !music.muted;
+      btn.textContent = music.muted ? "🔇 Son coupé" : "🔊 Son activé";
+    }
+  </script>
+
+</body>
+</html>
