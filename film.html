@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Films — Archive</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #0f0f10;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 40px;
+    }
+
+    header a {
+      color: #e3b07b;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    h1 {
+      font-weight: 400;
+      letter-spacing: 2px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 20px;
+      padding: 40px;
+    }
+
+    .grid img {
+      width: 100%;
+      height: 270px;
+      object-fit: cover;
+      border-radius: 10px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+
+    .grid img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="index.html">← Retour</a>
+    <h1>Filmographie</h1>
+    <div></div>
+  </header>
+
+  <div class="grid">
+    <!-- Exemples d'affiches -->
+    <img src="images/enter-the-void.jpg" alt="Enter the Void">
+    <img src="images/tokyo-drifter.jpg" alt="Tokyo Drifter">
+    <img src="images/under-the-skin.jpg" alt="Under the Skin">
+    <img src="images/holy-motors.jpg" alt="Holy Motors">
+    <img src="images/drive.jpg" alt="Drive">
+    <img src="images/climax.jpg" alt="Climax">
+    <img src="images/eyes-wide-shut.jpg" alt="Eyes Wide Shut">
+    <img src="images/antichrist.jpg" alt="Antichrist">
+    <img src="images/la-haine.jpg" alt="La Haine">
+    <img src="images/ghost-in-the-shell.jpg" alt="Ghost in the Shell">
+    <img src="images/mulholland-drive.jpg" alt="Mulholland Drive">
+    <img src="images/saint-laurent.jpg" alt="Saint Laurent">
+  </div>
+</body>
+</html>
