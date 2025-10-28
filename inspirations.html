@@ -33,6 +33,67 @@
       line-height: 1.6;
       margin-bottom: 20px;
       max-width: 800px;
+
+       .container {
+      display: flex;
+      gap: 30px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container a {
+      display: block;
+      width: 300px;
+      height: 400px;
+      overflow: hidden;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .container a:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+    }
+
+    .container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    @media (max-width: 900px) {
+      .container {
+        flex-direction: column;
+        gap: 20px;
+      }
+      .container a {
+        width: 80%;
+        height: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Image FILMS -->
+    <a href="film.html">
+      <img src="film.jpg" alt="Films">
+    </a>
+
+    <!-- Image MUSIQUE -->
+    <a href="music.html">
+      <img src="music.jpg" alt="Music">
+    </a>
+
+    <!-- Image ART -->
+    <a href="art.html">
+      <img src="art.jpg" alt="Art">
+    </a>
+  </div>
+</body>
+</html>
     }
   </style>
 </head>
@@ -88,4 +149,5 @@
 </body>
 
 </html>
+
 
