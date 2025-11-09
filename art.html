@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
@@ -11,10 +11,10 @@
       padding: 0;
       background: #000;
       color: #fff;
+      text-align: center;
     }
 
     h1 {
-      text-align: center;
       padding: 1.5rem 0;
       font-size: 2rem;
       color: #fff;
@@ -22,6 +22,7 @@
 
     .section {
       padding: 1rem;
+      margin-bottom: 2rem;
     }
 
     .section h2 {
@@ -34,9 +35,10 @@
     }
 
     .grid {
-      display: grid;
-      grid-template-columns: 1fr; /* une seule colonne verticale */
-      gap: 0.8rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
     }
 
     .movement {
@@ -46,22 +48,19 @@
       box-shadow: 0 3px 12px rgba(0,0,0,0.7);
       transition: transform 0.2s, box-shadow 0.2s;
       cursor: pointer;
-      display: flex;
-      align-items: center;
-      padding: 0.3rem;
+      width: 220px;
     }
 
     .movement:hover {
-      transform: translateX(5px);
+      transform: translateY(-5px);
       box-shadow: 0 6px 15px rgba(0,0,0,0.9);
     }
 
     .movement img {
-      width: 100px;   /* taille intermédiaire */
-      height: 150px;  /* hauteur intermédiaire */
+      width: 100%;
+      height: 150px;
       object-fit: cover;
       display: block;
-      margin-right: 0.5rem;
       border-radius: 4px;
     }
 
@@ -69,6 +68,7 @@
       font-size: 1rem;
       font-weight: bold;
       color: #fff;
+      padding: 0.5rem 0;
     }
 
     a {
@@ -112,7 +112,7 @@
       </a>
       <a href="tillmans.html">
         <div class="movement">
-          <img src="bruce gilden.jpg" alt="Wolfgang Tillmans">
+          <img src="bruce-gilden.jpg" alt="Bruce Gilden">
           <div class="caption">Bruce Gilden</div>
         </div>
       </a>
@@ -129,9 +129,9 @@
           <div class="caption">Marina Abramovic</div>
         </div>
       </a>
-      <a href="stefan.html">
+      <a href="cassils.html">
         <div class="movement">
-          <img src="cassils.jpg" alt="Stef Van Looveren">
+          <img src="cassils.jpg" alt="Cassils">
           <div class="caption">Cassils</div>
         </div>
       </a>
@@ -144,13 +144,13 @@
     <div class="grid">
       <a href="mode.html">
         <div class="movement">
-          <img src="ax-mcqueen.jpg" alt="Vivienne Westwood">
+          <img src="ax-mcqueen.jpg" alt="Alexander McQueen">
           <div class="caption">Alexander McQueen</div>
         </div>
       </a>
       <a href="arca.html">
         <div class="movement">
-          <img src="jean-paul-gaultier.jpg" alt="Arca">
+          <img src="jean-paul-gaultier.jpg" alt="Jean Paul Gaultier">
           <div class="caption">Jean Paul Gaultier</div>
         </div>
       </a>
@@ -195,5 +195,25 @@
     </div>
   </div>
 
+  <!-- Installation et Sculpture -->
+  <div class="section" id="installation-sculpture">
+    <h2>Installation & Sculpture</h2>
+    <div class="grid">
+      <a href="installation.html">
+        <div class="movement">
+          <img src="installation1.jpg" alt="Installation 1">
+          <div class="caption">Installation 1</div>
+        </div>
+      </a>
+      <a href="sculpture.html">
+        <div class="movement">
+          <img src="sculpture1.jpg" alt="Sculpture 1">
+          <div class="caption">Sculpture 1</div>
+        </div>
+      </a>
+    </div>
+  </div>
+
 </body>
 </html>
+
