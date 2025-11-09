@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
@@ -9,9 +9,10 @@
       font-family: 'Arial', sans-serif;
       margin: 0;
       padding: 0;
-      background: #000;
+      background: transparent; /* Background transparent */
       color: #fff;
       text-align: center;
+      overflow-x: hidden;
     }
 
     h1 {
@@ -20,8 +21,15 @@
       color: #fff;
     }
 
-    .section {
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
       padding: 1rem;
+    }
+
+    .section {
       margin-bottom: 2rem;
     }
 
@@ -42,18 +50,19 @@
     }
 
     .movement {
-      background: #111;
+      background: rgba(17,17,17,0.8); /* semi-transparent pour flotter sur le fond */
       border-radius: 6px;
       overflow: hidden;
       box-shadow: 0 3px 12px rgba(0,0,0,0.7);
-      transition: transform 0.2s, box-shadow 0.2s;
+      transition: transform 0.3s, box-shadow 0.3s;
       cursor: pointer;
       width: 220px;
+      animation: float 3s ease-in-out infinite;
     }
 
     .movement:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 15px rgba(0,0,0,0.9);
+      transform: translateY(-10px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.9);
     }
 
     .movement img {
@@ -75,151 +84,160 @@
       text-decoration: none;
       color: inherit;
     }
+
+    /* Animation flottante */
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-5px); }
+      100% { transform: translateY(0px); }
+    }
   </style>
 </head>
 <body>
 
-  <h1>Art Archive</h1>
+  <div class="container">
+    <h1>Art Archive</h1>
 
-  <!-- Peinture -->
-  <div class="section" id="peinture">
-    <h2>Peinture</h2>
-    <div class="grid">
-      <a href="peinture.html">
-        <div class="movement">
-          <img src="cabanel.jpg" alt="Jean-Michel Basquiat">
-          <div class="caption">Jean-Michel Basquiat</div>
-        </div>
-      </a>
-      <a href="bourgeois.html">
-        <div class="movement">
-          <img src="basquiat.webp" alt="Louise Bourgeois">
-          <div class="caption">Louise Bourgeois</div>
-        </div>
-      </a>
+    <!-- Peinture -->
+    <div class="section" id="peinture">
+      <h2>Peinture</h2>
+      <div class="grid">
+        <a href="peinture.html">
+          <div class="movement">
+            <img src="cabanel.jpg" alt="Jean-Michel Basquiat">
+            <div class="caption">Jean-Michel Basquiat</div>
+          </div>
+        </a>
+        <a href="bourgeois.html">
+          <div class="movement">
+            <img src="basquiat.webp" alt="Louise Bourgeois">
+            <div class="caption">Louise Bourgeois</div>
+          </div>
+        </a>
+      </div>
     </div>
-  </div>
 
-  <!-- Photographie -->
-  <div class="section" id="photographie">
-    <h2>Photographie</h2>
-    <div class="grid">
-      <a href="photo.html">
-        <div class="movement">
-          <img src="nan-goldin.jpg" alt="Nan Goldin">
-          <div class="caption">Nan Goldin</div>
-        </div>
-      </a>
-      <a href="tillmans.html">
-        <div class="movement">
-          <img src="bruce gilden.jpg" alt="Bruce Gilden">
-          <div class="caption">Bruce Gilden</div>
-        </div>
-      </a>
+    <!-- Photographie -->
+    <div class="section" id="photographie">
+      <h2>Photographie</h2>
+      <div class="grid">
+        <a href="photo.html">
+          <div class="movement">
+            <img src="nan-goldin.jpg" alt="Nan Goldin">
+            <div class="caption">Nan Goldin</div>
+          </div>
+        </a>
+        <a href="tillmans.html">
+          <div class="movement">
+            <img src="bruce-gilden.jpg" alt="Bruce Gilden">
+            <div class="caption">Bruce Gilden</div>
+          </div>
+        </a>
+      </div>
     </div>
-  </div>
 
-  <!-- Arts Performatifs -->
-  <div class="section" id="arts-performatifs">
-    <h2>Arts Performatifs</h2>
-    <div class="grid">
-      <a href="perf.html">
-        <div class="movement">
-          <img src="abramovic.jpg" alt="Marina Abramovic">
-          <div class="caption">Marina Abramovic</div>
-        </div>
-      </a>
-      <a href="cassils.html">
-        <div class="movement">
-          <img src="cassils.jpg" alt="Cassils">
-          <div class="caption">Cassils</div>
-        </div>
-
-            <a href="sterlac.html">
-        <div class="movement">
-          <img src="stelarc.jpeg" alt="Stelarc">
-          <div class="caption">Stelarc</div>
-        </div>
-      </a>
+    <!-- Arts Performatifs -->
+    <div class="section" id="arts-performatifs">
+      <h2>Arts Performatifs</h2>
+      <div class="grid">
+        <a href="perf.html">
+          <div class="movement">
+            <img src="abramovic.jpg" alt="Marina Abramovic">
+            <div class="caption">Marina Abramovic</div>
+          </div>
+        </a>
+        <a href="cassils.html">
+          <div class="movement">
+            <img src="cassils.jpg" alt="Cassils">
+            <div class="caption">Cassils</div>
+          </div>
+        </a>
+        <a href="stelarc.html">
+          <div class="movement">
+            <img src="stelarc.jpeg" alt="Stelarc">
+            <div class="caption">Stelarc</div>
+          </div>
+        </a>
+      </div>
     </div>
-  </div>
 
-  <!-- Mode -->
-  <div class="section" id="mode">
-    <h2>Mode</h2>
-    <div class="grid">
-      <a href="mode.html">
-        <div class="movement">
-          <img src="ax-mcqueen.jpg" alt="Alexander McQueen">
-          <div class="caption">Alexander McQueen</div>
-        </div>
-      </a>
-      <a href="arca.html">
-        <div class="movement">
-          <img src="jean-paul-gaultier.jpg" alt="Jean Paul Gaultier">
-          <div class="caption">Jean Paul Gaultier</div>
-        </div>
-      </a>
+    <!-- Mode -->
+    <div class="section" id="mode">
+      <h2>Mode</h2>
+      <div class="grid">
+        <a href="mode.html">
+          <div class="movement">
+            <img src="ax-mcqueen.jpg" alt="Alexander McQueen">
+            <div class="caption">Alexander McQueen</div>
+          </div>
+        </a>
+        <a href="arca.html">
+          <div class="movement">
+            <img src="jean-paul-gaultier.jpg" alt="Jean Paul Gaultier">
+            <div class="caption">Jean Paul Gaultier</div>
+          </div>
+        </a>
+      </div>
     </div>
-  </div>
 
-  <!-- Livres d'art -->
-  <div class="section" id="livres-dart">
-    <h2>Livres d'Art</h2>
-    <div class="grid">
-      <a href="book.html">
-        <div class="movement">
-          <img src="sophie-calle.jpg" alt="Sophie Calle">
-          <div class="caption">Sophie Calle</div>
-        </div>
-      </a>
-      <a href="imhof.html">
-        <div class="movement">
-          <img src="anne-imhof.jpg" alt="Anne Imhof">
-          <div class="caption">Anne Imhof</div>
-        </div>
-      </a>
+    <!-- Livres d'art -->
+    <div class="section" id="livres-dart">
+      <h2>Livres d'Art</h2>
+      <div class="grid">
+        <a href="book.html">
+          <div class="movement">
+            <img src="sophie-calle.jpg" alt="Sophie Calle">
+            <div class="caption">Sophie Calle</div>
+          </div>
+        </a>
+        <a href="imhof.html">
+          <div class="movement">
+            <img src="anne-imhof.jpg" alt="Anne Imhof">
+            <div class="caption">Anne Imhof</div>
+          </div>
+        </a>
+      </div>
     </div>
-  </div>
 
-  <!-- Arts numériques -->
-  <div class="section" id="arts-numeriques">
-    <h2>Arts Numériques</h2>
-    <div class="grid">
-      <a href="numerique.html">
-        <div class="movement">
-          <img src="jon-rafman.jpg" alt="Jon Rafman">
-          <div class="caption">Jon Rafman</div>
-        </div>
-      </a>
-      <a href="stelarc.html">
-        <div class="movement">
-          <img src="sara-sadik.jpg" alt="Stelarc">
-          <div class="caption">Stelarc</div>
-        </div>
-      </a>
+    <!-- Arts numériques -->
+    <div class="section" id="arts-numeriques">
+      <h2>Arts Numériques</h2>
+      <div class="grid">
+        <a href="numerique.html">
+          <div class="movement">
+            <img src="jon-rafman.jpg" alt="Jon Rafman">
+            <div class="caption">Jon Rafman</div>
+          </div>
+        </a>
+        <a href="stelarc.html">
+          <div class="movement">
+            <img src="sara-sadik.jpg" alt="Stelarc">
+            <div class="caption">Stelarc</div>
+          </div>
+        </a>
+      </div>
     </div>
-  </div>
 
-  <!-- Installation et Sculpture -->
-  <div class="section" id="installation-sculpture">
-    <h2>Installation & Sculpture</h2>
-    <div class="grid">
-      <a href="installation.html">
-        <div class="movement">
-          <img src="ivana-basic.jpg" alt="Installation 1">
-          <div class="caption">Installation 1</div>
-        </div>
-      </a>
-      <a href="sculpture.html">
-        <div class="movement">
-          <img src="tohe-commaret.jpg" alt="Sculpture 1">
-          <div class="caption">Sculpture 1</div>
-        </div>
-      </a>
+    <!-- Installation et Sculpture -->
+    <div class="section" id="installation-sculpture">
+      <h2>Installation & Sculpture</h2>
+      <div class="grid">
+        <a href="installation.html">
+          <div class="movement">
+            <img src="ivana-basic.jpg" alt="Installation 1">
+            <div class="caption">Installation 1</div>
+          </div>
+        </a>
+        <a href="sculpture.html">
+          <div class="movement">
+            <img src="tohe-commaret.jpg" alt="Sculpture 1">
+            <div class="caption">Sculpture 1</div>
+          </div>
+        </a>
+      </div>
     </div>
-  </div>
+
+  </div> <!-- container -->
 
 </body>
 </html>
-
