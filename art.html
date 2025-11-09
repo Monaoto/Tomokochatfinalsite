@@ -2,124 +2,180 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>art</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Art Archive Interactive</title>
   <style>
     body {
-      background: black;
-      color: white;
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: 'Arial', sans-serif;
       margin: 0;
-      padding: 40px;
-      box-sizing: border-box;
+      padding: 0;
+      background: #f5f5f5;
+      color: #222;
     }
-
-    a.back {
-      color: white;
-      text-decoration: none;
-      border: 1px solid white;
-      padding: 8px 16px;
-      display: inline-block;
-      margin-bottom: 30px;
-    }
-
-    a.back:hover {
-      background: white;
-      color: black;
-      transition: 0.2s;
-    }
-
     h1 {
-      font-size: 18px;
-      margin-bottom: 20px;
+      text-align: center;
+      padding: 2rem 0;
+      font-size: 2.5rem;
     }
-
-    p {
-      line-height: 1.6;
-      margin-bottom: 20px;
-      max-width: 800px;
+    .section {
+      padding: 2rem;
     }
-
-    /* --- Grille des courants artistiques --- */
+    .section h2 {
+      margin-bottom: 1rem;
+      font-size: 2rem;
+      border-bottom: 2px solid #ccc;
+      display: inline-block;
+      padding-bottom: 0.5rem;
+    }
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: 25px;
-      margin-top: 40px;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
     }
-
     .movement {
-      position: relative;
+      background: #fff;
       border-radius: 10px;
       overflow: hidden;
-      border: 1px solid rgba(255,255,255,0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: pointer;
     }
-
+    .movement:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
     .movement img {
       width: 100%;
-      height: 250px;
+      height: 200px;
       object-fit: cover;
       display: block;
-      filter: grayscale(30%);
-      transition: filter 0.3s ease;
     }
-
-    .movement:hover {
-      transform: scale(1.03);
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
-    }
-
-    .movement:hover img {
-      filter: grayscale(0%);
-    }
-
     .caption {
-      background: rgba(0, 0, 0, 0.7);
-      color: white;
+      padding: 1rem;
       text-align: center;
-      padding: 10px;
-      font-size: 14px;
-      letter-spacing: 1px;
+      font-weight: bold;
     }
-
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
   </style>
 </head>
 <body>
 
-  <a href="identity.html" class="back">← Retour</a>
-
   <h1>Art Archive</h1>
-  <p>
-  Marina Abramovic, Tarek Lakhrissi, Orlan, Stelarc, Genesis P-Orridge, Ron Athey,  
-    Anne Imhof, Laure Prouvost, Sophie Calle, Cassils, Arca, Jean-Michel Basquiat,  
-    Louise Bourgeois, Nan Goldin, Vivienne Westwood, Wolfgang Tillmans, Harley Weir, Juergen Teller,  
-    David Lynch, Harmony Korine, Lukas Zpira, Stef Van Looveren
-  </p>
 
-  <div class="grid">
-    <div class="movement">
-      <img src="jon-rafman.jpg" alt="Performance Art">
-      <div class="caption">Performance & Body Art</div>
+  <!-- Peinture -->
+  <div class="section" id="peinture">
+    <h2>Peinture</h2>
+    <div class="grid">
+      <a href="peinture.html">
+        <div class="movement">
+          <img src="cabanel.jpg" alt="Jean-Michel Basquiat">
+          <div class="caption">Jean-Michel Basquiat</div>
+        </div>
+      </a>
+      <a href="bourgeois.html">
+        <div class="movement">
+          <img src="basquiat.webp" alt="Louise Bourgeois">
+          <div class="caption">Louise Bourgeois</div>
+        </div>
+      </a>
     </div>
+  </div>
 
-    <div class="movement">
-      <img src="ivana-basic.jpg" alt="Surréalisme">
-      <div class="caption">Surréalisme</div>
+  <!-- Photographie -->
+  <div class="section" id="photographie">
+    <h2>Photographie</h2>
+    <div class="grid">
+      <a href="photo.html">
+        <div class="movement">
+          <img src="nan-goldin.jpg" alt="Nan Goldin">
+          <div class="caption">Nan Goldin</div>
+        </div>
+      </a>
+      <a href="tillmans.html">
+        <div class="movement">
+          <img src="bruce gilden.jpg" alt="Wolfgang Tillmans">
+          <div class="caption">Wolfgang Tillmans</div>
+        </div>
+      </a>
     </div>
+  </div>
 
-    <div class="movement">
-      <img src="posthuman.jpg" alt="Post-Human">
-      <div class="caption">Post-Human & Cyberféminisme</div>
+  <!-- Arts Performatifs -->
+  <div class="section" id="arts-performatifs">
+    <h2>Arts Performatifs</h2>
+    <div class="grid">
+      <a href="perf.html">
+        <div class="movement">
+          <img src="abramovic.jpg" alt="Marina Abramovic">
+          <div class="caption">Marina Abramovic</div>
+        </div>
+      </a>
+      <a href="stefan.html">
+        <div class="movement">
+          <img src="cassils.jpg" alt="Stef Van Looveren">
+          <div class="caption">Stef Van Looveren</div>
+        </div>
+      </a>
     </div>
+  </div>
 
-    <div class="movement">
-      <img src="installation.jpg" alt="Installation">
-      <div class="caption">Installation & Art conceptuel</div>
+  <!-- Mode -->
+  <div class="section" id="mode">
+    <h2>Mode</h2>
+    <div class="grid">
+      <a href="mode.html">
+        <div class="movement">
+          <img src="ax-mcqueen.jpg" alt="Vivienne Westwood">
+          <div class="caption">Vivienne Westwood</div>
+        </div>
+      </a>
+      <a href="arca.html">
+        <div class="movement">
+          <img src="jean-paul-gaultier.jpg" alt="Arca">
+          <div class="caption">Arca</div>
+        </div>
+      </a>
     </div>
+  </div>
 
-    <div class="movement">
-      <img src="photographie.jpg" alt="Photographie">
-      <div class="caption">Photographie documentaire</div>
+  <!-- Livres d'art -->
+  <div class="section" id="livres-dart">
+    <h2>Livres d'Art</h2>
+    <div class="grid">
+      <a href="book.html">
+        <div class="movement">
+          <img src="sophie-calle.jpg" alt="Sophie Calle">
+          <div class="caption">Sophie Calle</div>
+        </div>
+      </a>
+      <a href="imhof.html">
+        <div class="movement">
+          <img src="anne-imhof.jpg" alt="Anne Imhof">
+          <div class="caption">Anne Imhof</div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <!-- Arts numériques -->
+  <div class="section" id="arts-numeriques">
+    <h2>Arts Numériques</h2>
+    <div class="grid">
+      <a href="numerique.html">
+        <div class="movement">
+          <img src="jon-rafman.jpg" alt="Jon Rafman">
+          <div class="caption">Jon Rafman</div>
+        </div>
+      </a>
+      <a href="stelarc.html">
+        <div class="movement">
+          <img src="stelarc.jpg" alt="Stelarc">
+          <div class="caption">Stelarc</div>
+        </div>
+      </a>
     </div>
   </div>
 
