@@ -9,52 +9,65 @@
       font-family: 'Arial', sans-serif;
       margin: 0;
       padding: 0;
-      background: #f5f5f5;
-      color: #222;
+      background: #000;
+      color: #eee;
     }
+
     h1 {
       text-align: center;
-      padding: 2rem 0;
-      font-size: 2.5rem;
+      padding: 1.5rem 0;
+      font-size: 2rem; /* moins gros */
+      color: #fff;
     }
+
     .section {
-      padding: 2rem;
+      padding: 1.5rem;
     }
+
     .section h2 {
       margin-bottom: 1rem;
-      font-size: 2rem;
-      border-bottom: 2px solid #ccc;
+      font-size: 1.5rem; /* moins gros */
+      border-bottom: 1px solid #555;
       display: inline-block;
-      padding-bottom: 0.5rem;
+      padding-bottom: 0.3rem;
+      color: #fff;
     }
+
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* plus petites grilles */
+      gap: 1rem;
     }
+
     .movement {
-      background: #fff;
-      border-radius: 10px;
+      background: #111;
+      border-radius: 8px;
       overflow: hidden;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      box-shadow: 0 3px 10px rgba(0,0,0,0.5);
       transition: transform 0.3s, box-shadow 0.3s;
       cursor: pointer;
     }
+
     .movement:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.7);
     }
+
     .movement img {
       width: 100%;
-      height: 200px;
+      height: 180px; /* légèrement plus petit */
       object-fit: cover;
       display: block;
     }
+
     .caption {
-      padding: 1rem;
+      padding: 0.8rem 0.5rem;
       text-align: center;
       font-weight: bold;
+      color: #fff;
+      font-size: 0.9rem;
     }
+
     a {
       text-decoration: none;
       color: inherit;
