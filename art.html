@@ -3,69 +3,72 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Art Archive Interactive</title>
+  <title>Art Archive Menu</title>
   <style>
     body {
       font-family: 'Arial', sans-serif;
       margin: 0;
       padding: 0;
       background: #000;
-      color: #eee;
+      color: #fff;
     }
 
     h1 {
       text-align: center;
-      padding: 1.5rem 0;
-      font-size: 2rem; /* moins gros */
+      padding: 1rem 0;
+      font-size: 1.8rem;
       color: #fff;
     }
 
     .section {
-      padding: 1.5rem;
+      padding: 0.5rem 1rem;
     }
 
     .section h2 {
-      margin-bottom: 1rem;
-      font-size: 1.5rem; /* moins gros */
+      margin: 0.5rem 0;
+      font-size: 1.2rem;
       border-bottom: 1px solid #555;
       display: inline-block;
-      padding-bottom: 0.3rem;
+      padding-bottom: 0.2rem;
       color: #fff;
     }
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* plus petites grilles */
-      gap: 1rem;
+      grid-template-columns: 1fr; /* une seule colonne pour le menu vertical */
+      gap: 0.5rem;
     }
 
     .movement {
       background: #111;
-      border-radius: 8px;
+      border-radius: 5px;
       overflow: hidden;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.5);
-      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.7);
+      transition: transform 0.2s, box-shadow 0.2s;
       cursor: pointer;
+      display: flex;
+      align-items: center;
     }
 
     .movement:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 6px 15px rgba(0,0,0,0.7);
+      transform: translateX(5px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.9);
     }
 
     .movement img {
-      width: 100%;
-      height: 180px; /* légèrement plus petit */
+      width: 60px;  /* image très compacte */
+      height: 60px;
       object-fit: cover;
       display: block;
+      margin-right: 0.5rem;
+      border-radius: 3px;
     }
 
     .caption {
-      padding: 0.8rem 0.5rem;
-      text-align: center;
+      padding: 0.3rem 0;
+      font-size: 0.9rem;
       font-weight: bold;
       color: #fff;
-      font-size: 0.9rem;
     }
 
     a {
@@ -193,4 +196,3 @@
   </div>
 
 </body>
-</html>
