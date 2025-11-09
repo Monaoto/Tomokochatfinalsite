@@ -43,9 +43,9 @@
       display: block;
       overflow: hidden;
       border-radius: 10px;
+      animation: float 4s ease-in-out infinite;
     }
 
-    /* Animation de flottement */
     @keyframes float {
       0%   { transform: translateY(0px); }
       50%  { transform: translateY(-6px); }
@@ -58,7 +58,6 @@
       object-fit: cover;
       transition: transform 0.4s ease, opacity 0.3s ease;
       display: block;
-      animation: float 4s ease-in-out infinite;
     }
 
     .cover:hover img {
@@ -395,3 +394,4 @@
   </div>
 </body>
 </html>
+
